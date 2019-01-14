@@ -1,21 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto.compiladores;
+import Clases.Producto;
+import java.util.Scanner;
+ //* @author ferna
 
-/**
- *
- * @author ferna
- */
-public class ProyectoCompiladores {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class ProyectoCompiladores 
+{
+static Scanner leer = new Scanner(System.in);
+static Producto p = new Producto();
+static Producto p_general = new Producto();
+static Producto p_recibido= new Producto();
+static int no_producto;
+    public static void main(String[] args) 
+    {
+       for(int i=1; i<=2; i++)
+       {    
+           p = new Producto();
+           p.id=i;
+           System.out.println("Ingrese el nombre del producto");  
+           p.Nombre=leer.next();
+           System.out.println("Ingrese un precio");
+           p.Precio= leer.nextDouble();
+           p_general.set_producto(p);
+       }
+       
+       System.out.println("Ingrese un producto a buscar");
+       no_producto=leer.nextInt();
+       p_recibido=p_general.get_producto(no_producto);
+       
+       
+       
     }
     
 }
